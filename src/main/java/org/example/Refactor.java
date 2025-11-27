@@ -4,24 +4,25 @@ import java.util.Scanner;
 
 public class Refactor {
 
+    public static Scanner scanner = new Scanner(System.in);
+
     public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
         int opt;
         do {
             printMenu();
             opt = scanner.nextInt();
             scanner.nextLine();
 
-            menu(opt, scanner);
+            menu(opt);
 
         } while (opt != 3);
     }
 
-    private static void menu(int opt, Scanner scanner) {
+    private static void menu(int opt) {
         if (opt == 1) {
-            sumatory(scanner);
+            sumatory();
         } else if (opt == 2) {
-            average(scanner);
+            average();
         } else if (opt == 3) {
             System.out.println("Saliendo...");
         } else {
@@ -29,8 +30,8 @@ public class Refactor {
         }
     }
 
-    private static void average(Scanner scanner) {
-        int num = getNum(scanner);
+    private static void average() {
+        int num = getNum();
 
         int sum = 0;
         for (int i = 0; i < num; i++) {
@@ -42,8 +43,8 @@ public class Refactor {
         System.out.println("La media es " + med);
     }
 
-    private static void sumatory(Scanner scanner) {
-        int num = getNum(scanner);
+    private static void sumatory() {
+        int num = getNum();
         int sum = 0;
         for (int i = 1; i <= num; i++) {
             sum += i;
@@ -58,7 +59,7 @@ public class Refactor {
         System.out.println("3. Salir");
     }
 
-    private static int getNum(Scanner scanner) {
+    private static int getNum() {
         int num;
         do {
             System.out.print("Introduce un entero positivo: ");
