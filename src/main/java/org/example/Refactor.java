@@ -7,18 +7,22 @@ public class Refactor {
     public static Scanner scanner = new Scanner(System.in);
 
     public static void main(String[] args) {
+        menu();
+    }
+
+    private static void menu() {
         int opt;
         do {
             printMenu();
             opt = scanner.nextInt();
             scanner.nextLine();
 
-            menu(opt);
+            menuOpt(opt);
 
         } while (opt != 3);
     }
 
-    private static void menu(int opt) {
+    private static void menuOpt(int opt) {
         if (opt == 1) {
             sumatory();
         } else if (opt == 2) {
